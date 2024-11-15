@@ -4,13 +4,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/mj', async (req, res) => {
+app.get('/xl', async (req, res) => {
     const { prompt } = req.query;
     
     async function query(data) {
         try {
             const response = await axios.post(
-                "https://api-inference.huggingface.co/models/cagliostrolab/animagine-xl-3.1",
+                "https://huggingface.co/Kvikontent/midjourney-v6",
                 data,
                 {
                     headers: {
