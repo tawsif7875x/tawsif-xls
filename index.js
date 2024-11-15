@@ -10,7 +10,7 @@ app.get('/aniflux', async (req, res) => {
     async function query(data) {
         try {
             const response = await axios.post(
-                "https://huggingface.co/dataautogpt3/FLUX-AestheticAnime",
+                "https://api-inference.huggingface.co/models/dataautogpt3/FLUX-AestheticAnime",
                 data,
                 {
                     headers: {
