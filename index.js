@@ -4,13 +4,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/xl', async (req, res) => {
+app.get('/aniflux', async (req, res) => {
     const { prompt } = req.query;
     
     async function query(data) {
         try {
             const response = await axios.post(
-                "https://huggingface.co/cagliostrolab/animagine-xl-3.0",
+                "https://huggingface.co/dataautogpt3/FLUX-AestheticAnime",
                 data,
                 {
                     headers: {
