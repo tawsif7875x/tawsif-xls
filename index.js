@@ -10,7 +10,7 @@ app.get('/xl', async (req, res) => {
     async function query(data) {
         try {
             const response = await axios.post(
-                "https://huggingface.co/Kvikontent/midjourney-v6",
+                "https://huggingface.co/cagliostrolab/animagine-xl-3.0",
                 data,
                 {
                     headers: {
