@@ -1,10 +1,9 @@
 const axios = require('axios');
-const fs = require('fs'); 
 const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/aniflux', async (req, res) => {
+app.get('/mj', async (req, res) => {
     const { prompt } = req.query;
     
     async function query(data) {
@@ -29,29 +28,17 @@ app.get('/aniflux', async (req, res) => {
 
     try {
         const imageData = await query({ "inputs": `${prompt}` });
-        const filePath = './output.png';
-        const writer = fs.createWriteStream(filePath);
+        
+      
+        res.setHeader('Content-Type', 'image/png');
 
-       
-        imageData.data.pipe(writer);
-
-        writer.on('finish', () => {
-            console.log('Image saved as output.png');
-            
-            
-            res.sendFile(filePath, { root: __dirname }, (err) => {
-                if (err) {
-                    console.error('Error sending the file:', err);
-                    res.status(500).send('Error sending the file');
-                } else {
-                    console.log('Image sent to client');
-                }
-            });
+        imageData.data.pipe(res).on('error', (err) => {
+            console.error('Error sending the image:', err);
+            res.status(500).send('Error sending the image');
         });
 
-        writer.on('error', (err) => {
-            console.error('Error writing the file:', err);
-            res.status(500).send('Error saving the file');
+        imageData.data.on('end', () => {
+            console.log('Image sent to client');
         });
 
     } catch (error) {
@@ -62,3 +49,5 @@ app.get('/aniflux', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+Direact images response
