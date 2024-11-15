@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/mj', async (req, res) => {
+app.get('/xl', async (req, res) => {
     const { prompt } = req.query;
     
     async function query(data) {
@@ -49,5 +49,3 @@ app.get('/mj', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
-
-Direact images response
