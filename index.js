@@ -9,7 +9,7 @@ app.get('/xl', async (req, res) => {
     async function query(data) {
         try {
             const response = await axios.post(
-                "https://api-inference.huggingface.co/models/John6666/animagine-xl-v31-sdxl-spo",
+                "https://api-inference.huggingface.co/models/John6666/mala-anime-mix-nsfw-pony-xl-v3-sdxl",
                 data,
                 {
                     headers: {
