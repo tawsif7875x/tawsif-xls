@@ -1,17 +1,19 @@
 {
-  "name": "nodejs",
+  "name": "gaynsor",
   "version": "1.0.0",
-  "description": "",
+  "description": " h.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "hopeless",
+  "license": "MIT",
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "axios": "^1.7.7",
-    "express": "^4.21.1"
+    "axios": "^1.4.0",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
