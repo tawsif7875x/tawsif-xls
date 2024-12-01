@@ -1,9 +1,10 @@
+
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const port = 3956;
+const port = 3000;
 
-app.get('/xl', async (req, res) => {
+app.get('/api/mobius', async (req, res) => {
     try {
         const text = req.query.prompt;
         if (!text) {
